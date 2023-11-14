@@ -1,0 +1,36 @@
+.largeTitle {
+  font-size: 4.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 1.625rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.25rem;
+}
+
+.heading {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.subheading {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.body {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.primary {
+  color: var(--color-text-primary);
+}
+
+.secondary {
+  color: var(--color-text-secondary);
+}
