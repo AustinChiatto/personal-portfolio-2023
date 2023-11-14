@@ -1,95 +1,59 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import Typography from '@/components/Typography/Typography';
+import styles from './page.module.css';
+import Link from 'next/link';
+import InlineLink from '@/components/InlineLink/InlineLink';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <header className={styles.contentGrid}>
+        <div className={`${styles.contentLarge} ${styles.header}`}>
+          <div className={styles.logo}>
+            <Typography variant={'subheading'}>/-</Typography>
+          </div>
+          <div className={styles.projectIndex}>
+            <Typography variant={'subheading'}>Project Index</Typography>
+            <ul>
+              <li>
+                <InlineLink
+                  path="#"
+                  color={'secondary'}
+                >
+                  Interplanetary
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink
+                  path="#"
+                  color={'secondary'}
+                >
+                  Asteroid Run
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink
+                  path="#"
+                  color={'secondary'}
+                >
+                  Code2Image
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink
+                  path="#"
+                  color={'secondary'}
+                >
+                  Market Maestro
+                </InlineLink>
+              </li>
+            </ul>
+          </div>
+          <div className={styles.contact}>
+            <Typography variant={'subheading'}>hello@austinchiatto.com</Typography>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      </header>
+      <main className={styles.contentGrid}></main>
+    </>
+  );
 }
