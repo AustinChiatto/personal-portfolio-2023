@@ -1,3 +1,9 @@
-.inlineLink {
-  text-decoration: none;
+/* project list */
+.projectLink {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.projectLink > *:last-child {
+  grid-column-start: 3;
 }

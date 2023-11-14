@@ -1,22 +1,34 @@
 import Link from 'next/link';
-import Typography from '../Typography/Typography';
-import { ReactNode } from 'react';
+import React from 'react';
 import styles from './inlineLink.module.css';
 
-type InlineLinkProps = {
-  path: string;
-  color: string;
-  children: ReactNode;
+type LinkInfo = {
+  href: string;
+  label: string;
+  stack?: string;
 };
 
-const InlineLink = ({ path, children, color }: InlineLinkProps) => {
+type InlineLinkProps = {
+  link: LinkInfo;
+  isProjectLink?: boolean;
+  children: (isHovered: boolean) => JSX.Element;
+};
+
+const InlineLink: React.FC<InlineLinkProps> = ({ link, isProjectLink, children }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
   return (
-    <Link
-      href={path}
-      className={styles.inlineLink}
+    <li
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <Typography color={color}>{children}</Typography>
-    </Link>
+      <Link
+        href={link.href}
+        style={{ textDecoration: 'none' }}
+        className={isProjectLink ? styles.projectLink : undefined}
+      >
+        {children(isHovered)}
+      </Link>
+    </li>
   );
 };
 

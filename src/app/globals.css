@@ -6,4 +6,59 @@
   background: var(--color-body);
   color: var(--color-text-primary);
   font-size: 0.875rem;
+  overflow-x: hidden;
+}
+
+.contentGrid,
+.contentBase,
+.contentSmall,
+.contentLarge {
+  display: grid;
+}
+
+.contentGrid {
+  grid-template-columns:
+    [contentIgnoreGrid-start]
+    2rem
+    [contentLarge-start]
+    1fr
+    [contentBase-start]
+    1fr
+    [contentSmall-start]
+    repeat(11, 1fr)
+    [contentSmall-end]
+    1fr
+    [contentBase-end]
+    1fr
+    [contentLarge-end]
+    2rem
+    [contentIgnoreGrid-end];
+}
+
+.contentGrid > * {
+  grid-column: contentBase;
+}
+
+.contentGrid > .contentSmall {
+  grid-column: contentSmall;
+}
+
+.contentGrid > .contentLarge {
+  grid-column: contentLarge;
+}
+
+.contentGrid > .contentIgnoreGrid {
+  grid-column: contentIgnoreGrid;
+}
+
+.contentSmall {
+  grid-template-columns: repeat(11, 1fr);
+}
+
+.contentBase {
+  grid-template-columns: repeat(13, 1fr);
+}
+
+.contentLarge {
+  grid-template-columns: repeat(15, 1fr);
 }

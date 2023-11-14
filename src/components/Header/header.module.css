@@ -1,0 +1,31 @@
+/* header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  z-index: 9;
+}
+
+.logo {
+  grid-column-start: 1;
+  grid-column-end: 1;
+}
+
+.projectIndex {
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+
+.contact {
+  grid-column-start: 15;
+  grid-column-end: 16;
+}
+
+.navList {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
